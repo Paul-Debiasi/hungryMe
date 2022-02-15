@@ -2,10 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
+import HungryMeContextProvider from "./Context";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<BrowserRouter>
+		<HungryMeContextProvider>
+			<App />
+		</HungryMeContextProvider>
+	</BrowserRouter>,
 	document.getElementById("root")
 );
