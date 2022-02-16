@@ -10,7 +10,7 @@ export default function Main() {
 			<h1>Restaurants</h1>
 			<div className='cardContainer'>
 				{menu.map((item) => (
-					<Card item={item} />
+					<Card key={item.id} item={item} />
 				))}
 			</div>
 		</div>

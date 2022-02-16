@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { HungryMeContext } from "../../Context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 	const { menu, setMenu } = useContext(HungryMeContext);
@@ -36,7 +37,7 @@ export default function Header() {
 				placeholder='Search...'
 			/>
 			<button>Log in </button>
-			<button>Register </button>
+			<Link to='/register'>Register</Link>
 		</div>
 	);
 }
