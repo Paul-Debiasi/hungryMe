@@ -11,7 +11,7 @@ import axios from "axios";
 export default function LogIn() {
   const {
     businessUserArray,
-    setbusinessUserArray,
+    setBusinessUserArray,
     clientUserArray,
     setClientUserArray,
     currentUser,
@@ -27,13 +27,22 @@ export default function LogIn() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("/clientUsers");
+      const clientUserResponse = await axios.get("/clientUsers");
       // console.log("client array response is", response.data);
-      setClientUserArray(response.data);
+      setClientUserArray(clientUserResponse.data);
     };
     getData();
   }, [setClientUserArray]);
+
   console.log(" all clients are:", clientUserArray);
+  /*   useEffect(() => {
+    const getData = async () => {
+      const businessUserResponse = await axios.get("/businessUsers");
+      // console.log("client array response is", response.data);
+      setBusinessUserArray(businessUserResponse.data);
+    };
+    getData();
+  }, [setBusinessUserArray]); */
 
   const authorizeUser = (username, password) => {
     return clientUserArray.find(
@@ -44,7 +53,7 @@ export default function LogIn() {
     e.preventDefault();
     const user = authorizeUser(username, password);
     if (user) {
-      setCurrentUser({ ...currentUser, user });
+      setCurrentUser(user);
       setIsLoggedIn(true);
       console.log("is user logged in?", isLoggedIn);
       setIsInvalid(false);
@@ -52,6 +61,7 @@ export default function LogIn() {
       console.log("current user is ----------------", currentUser);
     } else {
       setIsInvalid(true);
+      setIsLoggedIn(false);
     }
   };
   return (

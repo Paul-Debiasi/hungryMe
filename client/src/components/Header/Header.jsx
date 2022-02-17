@@ -24,7 +24,7 @@ export default function Header() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   /* MODAL----------------- */
-  const { menu, setMenu, isLoggedIn, setIsLoggedIn } =
+  const { menu, setMenu, isLoggedIn, setIsLoggedIn, currentUser } =
     useContext(HungryMeContext);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function Header() {
       <button onClick={handleOpen}>Log in </button>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={currentUser.username ? handleClose : handleOpen}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
