@@ -3,7 +3,8 @@ import { HungryMeContext } from "../../Context";
 import Card from "../Card/Card";
 
 export default function Main() {
-	const { menu } = useContext(HungryMeContext);
+  const { menu } = useContext(HungryMeContext);
+
 
 	return (
 		<div>
@@ -15,4 +16,17 @@ export default function Main() {
 			</div>
 		</div>
 	);
+
+  return (
+    <div>
+      <h1>Restaurants</h1>
+
+      <div className="cardContainer">
+        {menu.map((item, idx) => (
+          <Card item={item} key={idx} />
+        ))}
+      </div>
+    </div>
+  );
+
 }
