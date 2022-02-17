@@ -1,0 +1,9 @@
+[
+	{
+		"id": "36004761-c1d6-4aeb-85c7-a3027bb90219",
+		"client": true,
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "1234"
+	}
+]
