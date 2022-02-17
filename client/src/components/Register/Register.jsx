@@ -20,6 +20,7 @@ export default function Register() {
 			...clientUser,
 			id: uuidv4(),
 			client: true,
+			favorites: [],
 			[e.target.name]: e.target.value,
 		});
 	};
