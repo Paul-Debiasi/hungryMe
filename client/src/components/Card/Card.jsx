@@ -35,56 +35,54 @@ export default function CardItem({ item }) {
   };
 
   return (
-    <div className="cardContainer">
-      <Card sx={{ maxWidth: 345 }}>
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={item.name}
-          subheader={item.cuisine_type}
-        />
-        <CardMedia
-          component="img"
-          height="194"
-          image={item.imageURL}
-          alt="Paella dish"
-        />
+    <Card sx={{ maxWidth: 345 }} className="cardContainer">
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            {item.name[0]}
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={item.name}
+        subheader={item.cuisine_type}
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={item.imageURL}
+        alt="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          Address: {item.address}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            Address: {item.address}
-          </Typography>
+          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>{item.operating_hours}</Typography>
         </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>Method:</Typography>
-            <Typography paragraph>{item.operating_hours}</Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
-    </div>
+      </Collapse>
+    </Card>
   );
 }
