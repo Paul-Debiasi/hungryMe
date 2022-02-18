@@ -1,0 +1,23 @@
+[
+	{
+		"id": "df0e1b9f-cbc0-47c8-8214-f228dde67391",
+		"client": true,
+		"business": true,
+		"username": "df",
+		"email": "saffs",
+		"password": "sdacf",
+		"address": "fcdscfds",
+		"neighbor": "scffccfesf",
+		"cuisine": "rgerg"
+	},
+	{
+		"id": "1e0e3ea0-fb1f-4c7e-8083-75dd709908f7",
+		"business": true,
+		"username": "Pablo",
+		"email": "paglo@gmail.com",
+		"password": "8503",
+		"address": "NiederStrasse",
+		"neighbor": "FHain",
+		"cuisine": "Thay"
+	}
+]

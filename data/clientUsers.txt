@@ -5,5 +5,53 @@
 		"username": "Doggo",
 		"email": "debiasi.paul@gmail.com",
 		"password": "1234"
+	},
+	{
+		"id": "74c88f22-40b1-4505-9122-39c8c06223ca",
+		"client": true,
+		"favorites": [],
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "123"
+	},
+	{
+		"id": "74c88f22-40b1-4505-9122-39c8c06223ca",
+		"client": true,
+		"favorites": [],
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "123"
+	},
+	{
+		"id": "805ae355-9dde-4140-a07f-279efbbc386e",
+		"client": true,
+		"favorites": [],
+		"username": "paud10",
+		"email": "debiasi.paul@gmail.com",
+		"password": "13234"
+	},
+	{
+		"id": "397a11ba-06ef-4cfe-a14f-dfe4a542200c",
+		"client": true,
+		"favorites": [],
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "1213"
+	},
+	{
+		"id": "397a11ba-06ef-4cfe-a14f-dfe4a542200c",
+		"client": true,
+		"favorites": [],
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "1213"
+	},
+	{
+		"id": "7d9ff4db-ca20-42e5-a146-b53664c18777",
+		"client": true,
+		"favorites": [],
+		"username": "Doggo",
+		"email": "debiasi.paul@gmail.com",
+		"password": "133"
 	}
 ]
