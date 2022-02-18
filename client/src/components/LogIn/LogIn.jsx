@@ -10,8 +10,6 @@ import axios from "axios";
 
 export default function LogIn() {
   const {
-    businessUserArray,
-    setBusinessUserArray,
     clientUserArray,
     setClientUserArray,
     currentUser,
@@ -49,8 +47,8 @@ export default function LogIn() {
     );
   };
 
-  //create a fun would take the curr user and save it into local storage
-  //
+  //create a function would take the curr user and save it into local storage
+
   const saveUserToLocal = (user) => {
     const stringUser = JSON.stringify(user);
     localStorage.setItem("authorizedUser", stringUser);
