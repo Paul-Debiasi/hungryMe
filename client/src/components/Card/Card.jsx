@@ -10,8 +10,12 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { HungryMeContext } from "../../Context";
+import { useContext } from "react";
 
-export default function CardItem({ item }) {
+export default function CardItem({ item, cb }) {
+  const {favorites, setFavorites, currentUser} = useContext(HungryMeContext);
+
   return (
     <Card sx={{ maxWidth: 345 }} className="cardContainer">
       <CardHeader
@@ -36,7 +40,7 @@ export default function CardItem({ item }) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon onClick={cb} />
         </IconButton>
       </CardActions>
     </Card>

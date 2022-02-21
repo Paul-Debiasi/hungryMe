@@ -13,7 +13,7 @@ export default function HungryMeContextProvider({ children }) {
     JSON.parse(localStorage.getItem("authorizedUser")) || {}
   );
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+const [favorites, setFavorites] = useState([])
   return (
     <HungryMeContext.Provider
       value={{
@@ -33,6 +33,8 @@ export default function HungryMeContextProvider({ children }) {
         setMenu,
         cart,
         setCart,
+        favorites,
+        setFavorites
       }}
     >
       {children}

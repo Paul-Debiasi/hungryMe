@@ -2,6 +2,14 @@ import { HungryMeContext } from "../../Context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./profile.scss";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
 
 export default function Profile() {
   const { currentUser } = useContext(HungryMeContext);
@@ -19,9 +27,19 @@ export default function Profile() {
           <h1>Favorites:</h1> You don't have any favorites yet{" "}
         </div>
       ) : (
-        currentUser.favorites.map((item) => <div>{item} </div>)
+        currentUser.favorites.map((item, idx) => (
+          <div key={idx}>
+            {item.name}
+            <CardMedia
+              component="img"
+              height="50"
+              width="50"
+              image={item.imageURL}
+              alt="Paella dish"
+            />
+          </div>
+        ))
       )}
-      <div></div>
     </div>
   );
 }
