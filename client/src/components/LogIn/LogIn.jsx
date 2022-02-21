@@ -5,13 +5,11 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useContext, useState, useEffect } from "react";
 import { HungryMeContext } from "../../Context";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function LogIn() {
   const {
-    businessUserArray,
-    setBusinessUserArray,
     clientUserArray,
     setClientUserArray,
     currentUser,
@@ -19,7 +17,6 @@ export default function LogIn() {
     isLoggedIn,
     setIsLoggedIn,
   } = useContext(HungryMeContext);
-  const history = useHistory();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +25,7 @@ export default function LogIn() {
   useEffect(() => {
     const getData = async () => {
       const clientUserResponse = await axios.get("/clientUsers");
-      // console.log("client array response is", response.data);
+      console.log("client array response is******", clientUserResponse);
       setClientUserArray(clientUserResponse.data);
     };
     getData();
@@ -49,21 +46,34 @@ export default function LogIn() {
       (user) => user.username === username && user.password === password
     );
   };
+
+  //create a function would take the curr user and save it into local storage
+
+  const saveUserToLocal = (user) => {
+    const stringUser = JSON.stringify(user);
+    localStorage.setItem("authorizedUser", stringUser);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = authorizeUser(username, password);
     if (user) {
       setCurrentUser(user);
+      saveUserToLocal(user);
       setIsLoggedIn(true);
       console.log("is user logged in?", isLoggedIn);
       setIsInvalid(false);
-      history.goBack();
+      //history.goBack();
       console.log("current user is ----------------", currentUser);
     } else {
       setIsInvalid(true);
       setIsLoggedIn(false);
     }
   };
+
+  //prevent logIn component if user is authorized
+  const navigate = useNavigate();
+  if (currentUser.username) navigate("/profile");
+
   return (
     <Box
       className="logInModal"

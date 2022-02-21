@@ -1,16 +1,15 @@
 import { useContext } from "react";
 import { HungryMeContext } from "../../Context";
 import Card from "../Card/Card";
-import Profile from "../Profile/Profile";
+import Header from "../Header/Header";
 
 export default function Main() {
   const { menu } = useContext(HungryMeContext);
 
   return (
     <div>
-      <Profile />
       <h1>Restaurants</h1>
-
+      <Header />
       <div className="cardContainer">
         {menu.map((item, idx) => (
           <Card item={item} key={idx} />
