@@ -9,7 +9,6 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 //imports restaurants.js file
-const menus = require("../data/restaurant").restaurants;
 
 // allows you to work with the file system on your computer.
 const fs = require("fs");
@@ -22,6 +21,7 @@ const pathObj = path.parse(__dirname); //
 app.use(express.json());
 
 let clients = [];
+let menus = [];
 
 //loads parsed clientUsers.txt file to CLIENTS array
 const loadClients = () => {
@@ -43,6 +43,24 @@ const saveClients = () => {
   );
 };
 
+const loadRestaurants = () => {
+  const dataFile = fs.readFileSync(
+    `${pathObj.dir}/data/restaurants.txt`,
+    "utf8"
+  );
+  //parse() takes a JSON string and then transforms it into a JavaScript object
+  const newDataFile = JSON.parse(dataFile);
+
+  menus = [...newDataFile];
+};
+
+const saveRestaurants = () => {
+  fs.writeFileSync(
+    `${pathObj.dir}/data/restaurants.txt`,
+    JSON.stringify(menus, null, "\t")
+  );
+};
+
 app.post("/register", (req, res) => {
   try {
     if (!req.body.client) return res.send({ success: false, errorId: 1 }); // username is empty
@@ -55,13 +73,14 @@ app.post("/register", (req, res) => {
     res.send(error.message);
   }
 });
+
 app.get("/restaurant", (req, res) => {
   try {
+    loadRestaurants();
     res.send(menus);
   } catch (e) {
     console.log(e.message);
   }
-  //console.log("restaurant is", menus);
 });
 
 //const clientUsers = require("../data/clientUsers").clientUsers;
@@ -69,11 +88,9 @@ app.get("/clientUsers", (req, res) => {
   try {
     loadClients();
     res.send(clients);
-    //  console.log("clients is -----", clients);
   } catch (e) {
     console.log(e.message);
   }
-  // console.log("client users are", clientUsers);
 });
 
 app.get("/profile", (req, res) => {
