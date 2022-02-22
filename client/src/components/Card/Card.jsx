@@ -14,7 +14,7 @@ import { HungryMeContext } from "../../Context";
 import { useContext } from "react";
 
 export default function CardItem({ item, cb }) {
-  const {favorites, setFavorites, currentUser} = useContext(HungryMeContext);
+  const { favorites, setFavorites, currentUser } = useContext(HungryMeContext);
 
   return (
     <Card sx={{ maxWidth: 345 }} className="cardContainer">
@@ -40,7 +40,7 @@ export default function CardItem({ item, cb }) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon onClick={cb} />
+          <FavoriteIcon onClick={() => cb(item)} />
         </IconButton>
       </CardActions>
     </Card>

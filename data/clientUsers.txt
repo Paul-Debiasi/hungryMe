@@ -8,18 +8,44 @@
 		"city": "Paris",
 		"avatar": "https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-brunette-woman-short-hair-avatar-cartoon-character-vector-149728784.jpg",
 		"businessClient": false,
-		"favorites": []
-	},
-	{
-		"id": "1042075",
-		"username": "pasta",
-		"name": "Simona",
-		"email": "simona@gmail.com",
-		"password": "1234",
-		"city": "Paris",
-		"avatar": "https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-brunette-woman-short-hair-avatar-cartoon-character-vector-149728784.jpg",
-		"businessClient": false,
-		"favorites": []
+		"favorites": [
+			{
+				"id": 2,
+				"name": "Umami",
+				"neighborhood": "Brooklyn",
+				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
+				"address": "919 Fulton St, Brooklyn, NY 11238",
+				"cuisine_type": "Pizza",
+				"currentUser": "1042075"
+			},
+			{
+				"id": 2,
+				"name": "Umami",
+				"neighborhood": "Brooklyn",
+				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
+				"address": "919 Fulton St, Brooklyn, NY 11238",
+				"cuisine_type": "Pizza",
+				"currentUser": "1042075"
+			},
+			{
+				"id": 2,
+				"name": "Umami",
+				"neighborhood": "Brooklyn",
+				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
+				"address": "919 Fulton St, Brooklyn, NY 11238",
+				"cuisine_type": "Pizza",
+				"currentUser": "1042075"
+			},
+			{
+				"id": 4,
+				"name": "Uncle Ben",
+				"neighborhood": "Manhattan",
+				"imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
+				"address": "205 E Houston St, New York, NY 10002",
+				"cuisine_type": "American",
+				"currentUser": "1042075"
+			}
+		]
 	},
 	{
 		"id": "a10762a0-53ef-4b68-be63-95e2872764e2",
@@ -246,7 +272,35 @@
 	},
 	{
 		"id": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1",
-		"favorites": [],
+		"favorites": [
+			{
+				"id": 1,
+				"name": "Kuchi Mitte",
+				"neighborhood": "Manhattan",
+				"imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2f/33/2d/healthy-bowl-frische.jpg",
+				"address": "171 E Broadway, New York, NY 10002",
+				"cuisine_type": "Asian",
+				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
+			},
+			{
+				"id": 2,
+				"name": "Umami",
+				"neighborhood": "Brooklyn",
+				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
+				"address": "919 Fulton St, Brooklyn, NY 11238",
+				"cuisine_type": "Pizza",
+				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
+			},
+			{
+				"id": 4,
+				"name": "Uncle Ben",
+				"neighborhood": "Manhattan",
+				"imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
+				"address": "205 E Houston St, New York, NY 10002",
+				"cuisine_type": "American",
+				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
+			}
+		],
 		"client": true,
 		"username": "Alessia999",
 		"businessUser": true,
@@ -255,5 +309,16 @@
 		"cousineType": "",
 		"password": "123",
 		"email": "keston.antonio.schmidtgen@gmail.com"
+	},
+	{
+		"id": "31e3ad35-2bde-4812-a44a-437aebc7a8d9",
+		"favorites": [],
+		"client": true,
+		"username": "Alessia999",
+		"businessUser": false,
+		"address": "",
+		"companyName": "",
+		"cousineType": "",
+		"password": "123"
 	}
 ]

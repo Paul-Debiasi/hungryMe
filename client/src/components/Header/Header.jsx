@@ -61,10 +61,8 @@ export default function Header() {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem("authorizedUser");
-    window.location.reload(true)
+    window.location.reload(true);
     navigate("/");
-
-   
   };
   const showProfile = () => {
     navigate("/profile");
@@ -100,7 +98,7 @@ export default function Header() {
               />
               <Button variant="light">Search</Button>
             </Form>
-            
+
             <Nav className={currentUser.username ? "invisible" : "visible"}>
               <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link onClick={handleOpen}>Log In</Nav.Link>
