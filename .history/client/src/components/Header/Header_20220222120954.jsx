@@ -28,14 +28,13 @@ const style = {
   p: 4,
 };
 export default function Header() {
-  const { menu, setMenu, currentUser, setFiltered } = useContext(HungryMeContext);
+  const { menu, setMenu, currentUser } = useContext(HungryMeContext);
 
   useEffect(() => {
     const getData = async (name) => {
       const response = await axios.get("/restaurant");
       console.log(response);
       setMenu(response.data);
-      setFiltered(response.data)
     };
     getData();
   }, []);
@@ -44,16 +43,12 @@ const [inputValue, setInputValue] = useState("")
 
   //Search filter
   const handleChange = (e) => {
-    setInputValue(e.target.value)
     const currentMenu = [...menu];
-    if(inputValue.length !== 0){
+    if(inputValue !== ""){}
     const filteredMenu = currentMenu.filter((item) => {
-      return item.name.toLowerCase().includes(inputValue.toLowerCase());
+      return item.name.toLowerCase().includes(e.target.value);
     });
-    setFiltered([...filteredMenu]);}
-    else{
-      setMenu([...menu])
-    }
+    setMenu([...filteredMenu]);
     //console.log("filtered menu", filteredMenu);
   };
   /* MODAL----------------- */
@@ -102,10 +97,9 @@ const [inputValue, setInputValue] = useState("")
                 className="me-2"
                 aria-label="Search"
                 value ={inputValue}
-                onChange={(e)=> setInputValue(e.target.value)}
+                onChange={handleChange}
               />
-              <Button variant="light" onClick={handleChange}>Search  
-</Button>
+              <Button variant="light">Search</Button>
             </Form>
             
             <Nav className={currentUser.username ? "invisible" : "visible"}>

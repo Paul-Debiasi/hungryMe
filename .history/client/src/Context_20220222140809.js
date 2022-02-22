@@ -14,7 +14,7 @@ export default function HungryMeContextProvider({ children }) {
   );
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 const [favorites, setFavorites] = useState([])
-const [filtered, setFiltered] = useState([])
+const [filtered, setFiltered]
   return (
     <HungryMeContext.Provider
       value={{
@@ -35,9 +35,7 @@ const [filtered, setFiltered] = useState([])
         cart,
         setCart,
         favorites,
-        setFavorites,
-        filtered,
-        setFiltered
+        setFavorites
       }}
     >
       {children}

@@ -10,6 +10,7 @@
 		"businessClient": false,
 		"favorites": []
 	},
+	
 	{
 		"id": "a10762a0-53ef-4b68-be63-95e2872764e2",
 		"client": true,

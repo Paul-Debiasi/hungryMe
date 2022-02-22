@@ -35,7 +35,7 @@ export default function Header() {
       const response = await axios.get("/restaurant");
       console.log(response);
       setMenu(response.data);
-      setFiltered(response.data)
+      setFilt
     };
     getData();
   }, []);
@@ -46,7 +46,7 @@ const [inputValue, setInputValue] = useState("")
   const handleChange = (e) => {
     setInputValue(e.target.value)
     const currentMenu = [...menu];
-    if(inputValue.length !== 0){
+    if(inputValue.length > 0){
     const filteredMenu = currentMenu.filter((item) => {
       return item.name.toLowerCase().includes(inputValue.toLowerCase());
     });

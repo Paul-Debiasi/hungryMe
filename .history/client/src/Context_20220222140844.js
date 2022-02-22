@@ -37,7 +37,7 @@ const [filtered, setFiltered] = useState([])
         favorites,
         setFavorites,
         filtered,
-        setFiltered
+        setFiltered,
       }}
     >
       {children}

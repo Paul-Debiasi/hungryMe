@@ -36,8 +36,7 @@ const [filtered, setFiltered] = useState([])
         setCart,
         favorites,
         setFavorites,
-        filtered,
-        setFiltered
+        filtered
       }}
     >
       {children}

@@ -11,6 +11,17 @@
 		"favorites": []
 	},
 	{
+		"id": "1042075",
+		"username": "pasta",
+		"name": "Simona",
+		"email": "simona@gmail.com",
+		"password": "1234",
+		"city": "Paris",
+		"avatar": "https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-brunette-woman-short-hair-avatar-cartoon-character-vector-149728784.jpg",
+		"businessClient": false,
+		"favorites": []
+	},
+	{
 		"id": "a10762a0-53ef-4b68-be63-95e2872764e2",
 		"client": true,
 		"favorites": [],
