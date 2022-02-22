@@ -32,22 +32,12 @@ export default function LogIn() {
   }, [setClientUserArray]);
 
   console.log(" all clients are:", clientUserArray);
-  /*   useEffect(() => {
-    const getData = async () => {
-      const businessUserResponse = await axios.get("/businessUsers");
-      // console.log("client array response is", response.data);
-      setBusinessUserArray(businessUserResponse.data);
-    };
-    getData();
-  }, [setBusinessUserArray]); */
 
   const authorizeUser = (username, password) => {
     return clientUserArray.find(
       (user) => user.username === username && user.password === password
     );
   };
-
-  //create a function would take the curr user and save it into local storage
 
   const saveUserToLocal = (user) => {
     const stringUser = JSON.stringify(user);
@@ -62,7 +52,7 @@ export default function LogIn() {
       setIsLoggedIn(true);
       console.log("is user logged in?", isLoggedIn);
       setIsInvalid(false);
-      //history.goBack();
+
       console.log("current user is ----------------", currentUser);
     } else {
       setIsInvalid(true);

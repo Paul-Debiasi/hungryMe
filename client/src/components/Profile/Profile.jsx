@@ -10,6 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
+import unknown from "../../img/unknown.png";
 
 export default function Profile() {
   const { currentUser } = useContext(HungryMeContext);
@@ -18,7 +19,10 @@ export default function Profile() {
   return (
     <div className="profileContainer">
       <h1>Successful log in {currentUser.username} :)</h1>
-      <img src={currentUser.avatar} alt="Profile" />
+      <img
+        src={currentUser.avatar ? currentUser.avatar : unknown}
+        alt="Profile"
+      />
       <h2>Your name: {currentUser.name}</h2>
       <h3>Your city: {currentUser.city}</h3>
       <h5>Your email: {currentUser.email}</h5>

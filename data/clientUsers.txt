@@ -2,39 +2,28 @@
 	{
 		"id": "1042075",
 		"username": "pasta",
-		"name": "Simona",
+		"name": "Carbonara",
+		"businessUser": true,
 		"email": "simona@gmail.com",
 		"password": "1234",
 		"city": "Paris",
 		"avatar": "https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-brunette-woman-short-hair-avatar-cartoon-character-vector-149728784.jpg",
-		"businessClient": false,
 		"favorites": [
 			{
-				"id": 2,
-				"name": "Umami",
-				"neighborhood": "Brooklyn",
-				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
-				"address": "919 Fulton St, Brooklyn, NY 11238",
-				"cuisine_type": "Pizza",
-				"currentUser": "1042075"
+				"id": 9,
+				"name": "Mu Ramen",
+				"neighborhood": "Queens",
+				"imageURL": "https://assets.bonappetit.com/photos/57ae038653e63daf11a4e122/master/pass/shoyu-ramen.jpg",
+				"address": "1209 Jackson Ave, Queens, NY 11101",
+				"cuisine_type": "Asian"
 			},
 			{
-				"id": 2,
-				"name": "Umami",
+				"id": 6,
+				"name": "Hometown BBQ",
 				"neighborhood": "Brooklyn",
-				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
-				"address": "919 Fulton St, Brooklyn, NY 11238",
-				"cuisine_type": "Pizza",
-				"currentUser": "1042075"
-			},
-			{
-				"id": 2,
-				"name": "Umami",
-				"neighborhood": "Brooklyn",
-				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
-				"address": "919 Fulton St, Brooklyn, NY 11238",
-				"cuisine_type": "Pizza",
-				"currentUser": "1042075"
+				"imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4GUCKb0OX5oUYKUHmGQ5LoMUN4n-0VgLhedTmYRRXFmM7-R1NwG5uvUc-Mi8JU3NSU4&usqp=CAU",
+				"address": "454 Van Brunt St, Brooklyn, NY 11231",
+				"cuisine_type": "American"
 			},
 			{
 				"id": 4,
@@ -42,8 +31,15 @@
 				"neighborhood": "Manhattan",
 				"imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
 				"address": "205 E Houston St, New York, NY 10002",
-				"cuisine_type": "American",
-				"currentUser": "1042075"
+				"cuisine_type": "American"
+			},
+			{
+				"id": 3,
+				"name": "Kang Ho Dong Baekjeong",
+				"neighborhood": "Manhattan",
+				"imageURL": "https://pervenchecatering.co.uk/wp-content/uploads/2020/08/sushi-japanese-food-catering-pervenche-asian-fusion-food-catering-london-1.jpg",
+				"address": "1 E 32nd St, New York, NY 10016",
+				"cuisine_type": "Asian"
 			}
 		]
 	},
@@ -320,5 +316,17 @@
 		"companyName": "",
 		"cousineType": "",
 		"password": "123"
+	},
+	{
+		"id": "5fa61948-0354-4ede-9c20-b2f25ee049de",
+		"favorites": [],
+		"client": true,
+		"username": "boss",
+		"businessUser": true,
+		"phoneNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"password": "1234",
+		"email": "boss@gmail.com"
 	}
 ]

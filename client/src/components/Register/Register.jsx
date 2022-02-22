@@ -8,9 +8,9 @@ export default function Register() {
   const { menu, setMenu, clientUser, setClientUser } =
     useContext(HungryMeContext);
   const [business, setBusiness] = useState(false);
-  const [companyName, setCompanyName] = useState("");
-  const [cousineType, setCousineType] = useState("");
-  const [address, setAddress] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClient = (e) => {
     e.preventDefault();
@@ -22,9 +22,9 @@ export default function Register() {
       client: true,
       [e.target.name]: e.target.value,
       businessUser: business,
-      address: address,
-      companyName: companyName,
-      cousineType: cousineType,
+      phoneNumber: phoneNumber,
+      firstName: firstName,
+      lastName: lastName,
     });
   };
 
@@ -51,8 +51,6 @@ export default function Register() {
         defaultChecked
         onChange={() => {
           setBusiness(false);
-
-          console.log("buisnes is from buisnes?", business);
         }}
       />{" "}
       Client
@@ -62,7 +60,6 @@ export default function Register() {
         name="gender"
         onChange={() => {
           setBusiness(true);
-          console.log("buisnes is from client?", business);
         }}
       />{" "}
       Business owner
@@ -95,29 +92,29 @@ export default function Register() {
           </button>
         ) : (
           <>
-            <label className="label">Address</label>
+            <label className="label">Phone number</label>
             <input
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               type="text"
               name="address"
               id="address"
             />
-            <label className="label">Cousine Type</label>
+            <label className="label">First Name</label>
             <input
-              value={cousineType}
-              onChange={(e) => setCousineType(e.target.value)}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               type="text"
               name="cousine"
               id="neighbor"
             />
-            <label className="label">Company name</label>
+            <label className="label">Last name</label>
             <input
-              value={companyName}
+              value={lastName}
               type="text"
               name="restaurant"
               id="cuisine"
-              onChange={(e) => setCompanyName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <button className="btn" type="submit" onClick={submitClient}>
               Submit

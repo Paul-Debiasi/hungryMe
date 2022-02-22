@@ -5,16 +5,24 @@ import Header from "../Header/Header";
 import axios from "axios";
 
 export default function Main() {
-  const { menu, favorites, setFavorites, currentUser } =
-    useContext(HungryMeContext);
+  const { menu, currentUser, setCurrentUser } = useContext(HungryMeContext);
 
   const addToFav = async (item) => {
+    //adding a new restaurant to favorite array
     currentUser.favorites?.push(item);
 
-    item.currentUser = currentUser.id;
+    //splitting request so we can pass a restaurant object
+    // and currentUser Id to backend
+    let request = {
+      item: item,
+      currentUserId: currentUser.id,
+    };
 
-    const response = await axios.post("/favorites", item);
+    const response = await axios.post("/toggle_favorites", request);
     console.log("response from main is", response);
+
+    //updating currentUser from backend
+    setCurrentUser(response.data.client);
   };
   return (
     <div>

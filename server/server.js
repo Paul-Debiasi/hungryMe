@@ -83,7 +83,7 @@ app.get("/restaurant", (req, res) => {
   }
 });
 
-//const clientUsers = require("../data/clientUsers").clientUsers;
+//sending all clients to "/clientUsers"
 app.get("/clientUsers", (req, res) => {
   try {
     loadClients();
@@ -93,22 +93,46 @@ app.get("/clientUsers", (req, res) => {
   }
 });
 
-app.post("/favorites", (req, res) => {
+//updating client favorites
+//if client clicks on HeartIcon we check if the item already exists
+//then we remove
+//if does not exists then we add to favorites array
+app.post("/toggle_favorites", (req, res) => {
   try {
     // user id does not exist
-    if (!req.body.id) return res.send({ success: false, errorId: 1 });
+    if (!req.body.item.id) return res.send({ success: false, errorId: 1 });
     loadClients();
 
-    //  idx = finds index from all client array witch is equal to currentUser id
-    const idx = clients.findIndex((item) => item.id == req.body.currentUser);
+    //  client = finds a currentUser from frontend
+    const client = clients.find(
+      (client) => client.id == req.body.currentUserId
+    );
+    // getting currentUser INDEX in clients array
+    const clientIndex = clients.findIndex(
+      (client) => client.id == req.body.currentUserId
+    );
 
-    console.log("Index found:", idx);
-    // add the new favorite restaurant
-    clients[idx].favorites.push(req.body);
+    //getting Index of favoriteItem object
+    const favItemIndex = client.favorites.findIndex(
+      (favItem) => favItem.id === req.body.item.id
+    );
+
+    //if the FavItem exists, then remove and send back updated client
+    if (favItemIndex > -1) {
+      client.favorites.splice(favItemIndex, 1);
+      saveClients();
+      res.send({ success: true, client: client });
+
+      return;
+    }
+
+    //else add the new favorite restaurant to client array
+    clients[clientIndex].favorites.push(req.body.item);
 
     saveClients();
+
     // send back to client the result
-    res.send({ success: true, client: req.body });
+    res.send({ success: true, client: client });
   } catch (error) {
     console.log("error in app.post", error.message);
     res.send(error.message);

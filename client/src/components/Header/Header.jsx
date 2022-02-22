@@ -15,6 +15,7 @@ import Modal from "@mui/material/Modal";
 import LogIn from "../LogIn/LogIn";
 import { useNavigate } from "react-router-dom";
 import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import unknown from "../../img/unknown.png";
 
 const style = {
   position: "absolute",
@@ -61,8 +62,8 @@ export default function Header() {
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem("authorizedUser");
-    window.location.reload(true);
     navigate("/");
+    window.location.reload(true);
   };
   const showProfile = () => {
     navigate("/profile");
@@ -116,7 +117,7 @@ export default function Header() {
             <Nav className={currentUser.username ? "visible" : "invisible"}>
               <Image
                 onClick={showProfile}
-                src={currentUser?.avatar}
+                src={currentUser.avatar ? currentUser.avatar : unknown}
                 roundedCircle
                 width={50}
                 height={50}

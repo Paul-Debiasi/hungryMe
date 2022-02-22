@@ -14,7 +14,16 @@ import { HungryMeContext } from "../../Context";
 import { useContext } from "react";
 
 export default function CardItem({ item, cb }) {
-  const { favorites, setFavorites, currentUser } = useContext(HungryMeContext);
+  const { currentUser } = useContext(HungryMeContext);
+  let toggled = false;
+
+  //for each favorite item of currentUser we set toggled = true, to set the color of heartIcon red
+  currentUser.favorites.forEach((favItem) => {
+    if (item.id === favItem.id) {
+      toggled = true;
+    }
+    return;
+  });
 
   return (
     <Card sx={{ maxWidth: 345 }} className="cardContainer">
@@ -40,7 +49,10 @@ export default function CardItem({ item, cb }) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon onClick={() => cb(item)} />
+          <FavoriteIcon
+            onClick={() => cb(item)}
+            className={toggled ? "text-danger" : ""}
+          />
         </IconButton>
       </CardActions>
     </Card>
