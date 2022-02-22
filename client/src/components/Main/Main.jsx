@@ -5,7 +5,14 @@ import Header from "../Header/Header";
 import axios from "axios";
 
 export default function Main() {
-  const { menu, currentUser, setCurrentUser } = useContext(HungryMeContext);
+  const {
+    menu,
+    favorites,
+    setFavorites,
+    setCurrentUser,
+    currentUser,
+    filtered,
+  } = useContext(HungryMeContext);
 
   const addToFav = async (item) => {
     //adding a new restaurant to favorite array
@@ -29,8 +36,8 @@ export default function Main() {
       <h1>Restaurants</h1>
       <Header />
       <div className="cardContainer">
-        {menu.map((item, idx) => (
-          <Card item={item} key={idx} cb={addToFav} />
+        {filtered.map((item, idx) => (
+          <Card item={item} key={idx} cb={() => addToFav(item)} />
         ))}
       </div>
     </div>
