@@ -36,7 +36,7 @@ const loadClients = () => {
 };
 
 //writes stringified data to clientUsers.txt
-const saveClients = () => {
+const saveClients = (array) => {
   fs.writeFileSync(
     `${pathObj.dir}/data/clientUsers.txt`,
     JSON.stringify(clients, null, "\t")

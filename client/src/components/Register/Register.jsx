@@ -2,8 +2,6 @@ import { useState, useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { HungryMeContext } from "../../Context";
 import axios from "axios";
-import RegisterForm from "./RegisterForm";
-import { Form, Col, Button, Row } from "react-bootstrap";
 import "./Register.scss";
 
 export default function Register() {
