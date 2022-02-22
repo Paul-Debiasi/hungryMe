@@ -172,5 +172,88 @@
 		"username": "helooooooooooooooooooooooooo",
 		"password": "1234htr7jnw",
 		"email": "gdfsx@gmail.com"
+	},
+	{
+		"id": "dbd2df67-d7e4-47b1-b563-69c84030d021",
+		"client": true,
+		"favorites": [],
+		"username": "pastagaga",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "dbd2df67-d7e4-47b1-b563-69c84030d021",
+		"client": true,
+		"favorites": [],
+		"username": "pastagaga",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "c281813a-bc4c-4018-b5c4-9a29e4ea9a20",
+		"favorites": [],
+		"username": "0000p0astagaga",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
+		"client": true,
+		"favorites": [],
+		"username": "pasta00000000000000",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
+		"client": true,
+		"favorites": [],
+		"username": "pasta00000000000000",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
+		"client": true,
+		"favorites": [],
+		"username": "pasta00000000000000",
+		"businessUser": false,
+		"password": "1234",
+		"email": "semuona@gmail.com"
+	},
+	{
+		"id": "b912e7f6-afea-4b50-b13f-bcc24920fa04",
+		"client": true,
+		"favorites": [],
+		"username": "pasta000",
+		"businessUser": false,
+		"password": "1234",
+		"email": "keston.antonio.schmidtgen@gmail.com"
+	},
+	{
+		"id": "b9892af3-7539-461e-b2c5-a54b80374f77",
+		"client": true,
+		"favorites": [],
+		"username": "burger",
+		"businessUser": false,
+		"password": "1234",
+		"email": "sim@some.gmail"
+	},
+	{
+		"id": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1",
+		"favorites": [],
+		"client": true,
+		"username": "Alessia999",
+		"businessUser": true,
+		"address": "",
+		"companyName": "",
+		"cousineType": "",
+		"password": "123",
+		"email": "keston.antonio.schmidtgen@gmail.com"
 	}
 ]
