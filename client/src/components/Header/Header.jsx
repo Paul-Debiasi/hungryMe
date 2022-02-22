@@ -66,10 +66,8 @@ const [inputValue, setInputValue] = useState("")
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem("authorizedUser");
-    window.location.reload(true)
+    window.location.reload(true);
     navigate("/");
-
-   
   };
   const showProfile = () => {
     navigate("/profile");
@@ -107,7 +105,7 @@ const [inputValue, setInputValue] = useState("")
               <Button variant="light" onClick={handleChange}>Search  
 </Button>
             </Form>
-            
+
             <Nav className={currentUser.username ? "invisible" : "visible"}>
               <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link onClick={handleOpen}>Log In</Nav.Link>

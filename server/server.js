@@ -36,7 +36,7 @@ const loadClients = () => {
 };
 
 //writes stringified data to clientUsers.txt
-const saveClients = () => {
+const saveClients = (array) => {
   fs.writeFileSync(
     `${pathObj.dir}/data/clientUsers.txt`,
     JSON.stringify(clients, null, "\t")
@@ -90,6 +90,28 @@ app.get("/clientUsers", (req, res) => {
     res.send(clients);
   } catch (e) {
     console.log(e.message);
+  }
+});
+
+app.post("/favorites", (req, res) => {
+  try {
+    // user id does not exist
+    if (!req.body.id) return res.send({ success: false, errorId: 1 });
+    loadClients();
+
+    //  idx = finds index from all client array witch is equal to currentUser id
+    const idx = clients.findIndex((item) => item.id == req.body.currentUser);
+
+    console.log("Index found:", idx);
+    // add the new favorite restaurant
+    clients[idx].favorites.push(req.body);
+
+    saveClients();
+    // send back to client the result
+    res.send({ success: true, client: req.body });
+  } catch (error) {
+    console.log("error in app.post", error.message);
+    res.send(error.message);
   }
 });
 

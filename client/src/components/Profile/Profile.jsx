@@ -22,6 +22,7 @@ export default function Profile() {
       <h2>Your name: {currentUser.name}</h2>
       <h3>Your city: {currentUser.city}</h3>
       <h5>Your email: {currentUser.email}</h5>
+      <h5>Your id: {currentUser.id}</h5>
       {currentUser.favorites.length === 0 ? (
         <div>
           <h1>Favorites:</h1> You don't have any favorites yet{" "}

@@ -6,6 +6,7 @@
     "imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2f/33/2d/healthy-bowl-frische.jpg",
     "address": "171 E Broadway, New York, NY 10002",
     "cuisine_type": "Asian"
+   
   },
   {
     "id": 2,
