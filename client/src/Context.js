@@ -9,9 +9,12 @@ export default function HungryMeContextProvider({ children }) {
 	const [cart, setCart] = useState([]);
 	const [businessUserArray, setBusinessUserArray] = useState([]);
 	const [clientUserArray, setClientUserArray] = useState([]);
-	const [currentUser, setCurrentUser] = useState({});
+	const [currentUser, setCurrentUser] = useState(
+		JSON.parse(localStorage.getItem("authorizedUser")) || {}
+	);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+	const [favorites, setFavorites] = useState([]);
+	const [filtered, setFiltered] = useState([]);
 	return (
 		<HungryMeContext.Provider
 			value={{
@@ -31,6 +34,10 @@ export default function HungryMeContextProvider({ children }) {
 				setMenu,
 				cart,
 				setCart,
+				favorites,
+				setFavorites,
+				filtered,
+				setFiltered,
 			}}
 		>
 			{children}

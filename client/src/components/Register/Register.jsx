@@ -2,16 +2,15 @@ import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { HungryMeContext } from "../../Context";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import "./Register.scss";
 
 export default function Register() {
-	const { clientUser, setClientUser, businessUser, setBusinessUser } =
+	const { menu, setMenu, clientUser, setClientUser } =
 		useContext(HungryMeContext);
 	const [business, setBusiness] = useState(false);
-	const [client, setClient] = useState(false);
-	const [businessValue, setBusinessValue] = useState();
-	const [val, setVal] = useState();
-	let history = useHistory();
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
 
 	const handleClient = (e) => {
 		e.preventDefault();
@@ -19,183 +18,110 @@ export default function Register() {
 		setClientUser({
 			...clientUser,
 			id: uuidv4(),
-			client: true,
 			favorites: [],
+			client: true,
 			[e.target.name]: e.target.value,
-		});
-	};
-
-	const handleBusiness = (e) => {
-		setBusinessUser({
-			...businessUser,
-			id: uuidv4(),
-			business: true,
-			[e.target.name]: e.target.value,
+			businessUser: business,
+			phoneNumber: phoneNumber,
+			firstName: firstName,
+			lastName: lastName,
 		});
 	};
 
 	const submitClient = async (e) => {
 		e.preventDefault();
-		if (val === "") return;
-		const data = { ...clientUser };
-		console.log("Submiting !!", data);
-		const response = await axios.post("/clients", data);
-		console.log(response);
-		setVal(() => "");
+
+		const data = clientUser;
+		console.log("Submitting !!", data);
+		const response = await axios.post("/register", data);
+		console.log("response is", response);
 	};
-	const submitBusiness = async (e) => {
-		e.preventDefault();
-		const data = businessUser;
-		const response = await axios.post("/business", data);
-		console.log(response);
-		setBusinessValue(() => "");
-	};
-	console.log(val);
+
+	console.log(clientUser);
 
 	return (
-		<div>
+		<div className='registerForm'>
 			<div>
 				<h1>User Registration</h1>
 			</div>
 			<input
 				type='radio'
-				value='business'
-				name='gender'
-				onChange={() => {
-					if (!business) {
-						setBusiness(true);
-						setClient(false);
-					}
-				}}
-			/>{" "}
-			Business owner
-			<input
-				type='radio'
 				value='client'
 				name='gender'
+				defaultChecked
 				onChange={() => {
-					if (!client) {
-						setClient(true);
-						setBusiness(false);
-					}
+					setBusiness(false);
 				}}
 			/>{" "}
 			Client
-			{client ? (
-				<form>
-					<label className='label'>Name</label>
-					<input
-						onChange={handleClient}
-						className='input'
-						name='username'
-						type='text'
-						id='name'
-						value={val}
-					/>
-					<label className='label'>Email</label>
-					<input
-						onChange={handleClient}
-						className='input'
-						type='email'
-						name='email'
-						value={val}
-					/>
-					<label className='label'>Password</label>
-					<input
-						onChange={handleClient}
-						className='input'
-						type='password'
-						name='password'
-						value={val}
-					/>
-
+			<input
+				type='radio'
+				value='business'
+				name='gender'
+				onChange={() => {
+					setBusiness(true);
+				}}
+			/>{" "}
+			Business owner
+			<form>
+				<label className='label'>Name</label>
+				<input
+					onChange={handleClient}
+					className='input'
+					name='username'
+					type='text'
+					id='name'
+				/>
+				<label className='label'>Email</label>
+				<input
+					onChange={handleClient}
+					className='input'
+					type='email'
+					name='email'
+				/>
+				<label className='label'>Password</label>
+				<input
+					onChange={handleClient}
+					className='input'
+					type='password'
+					name='password'
+				/>
+				{!business ? (
 					<button className='btn' type='submit' onClick={submitClient}>
 						Submit
 					</button>
-				</form>
-			) : null}
-			{business ? (
-				<form
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "center",
-					}}
-				>
+				) : (
 					<>
-						<div>
-							<label className='label'>Name</label>
-							<input
-								onChange={handleBusiness}
-								className='input'
-								name='username'
-								type='text'
-								id='name'
-								value={businessValue}
-							/>
-						</div>
-						<div>
-							<label className='label'>Email</label>
-							<input
-								onChange={handleBusiness}
-								className='input'
-								type='email'
-								name='email'
-								value={businessValue}
-							/>
-						</div>
-						<div>
-							<label className='label'>Password</label>
-							<input
-								onChange={handleBusiness}
-								className='input'
-								type='password'
-								name='password'
-								value={businessValue}
-							/>
-						</div>
-
-						<div>
-							<label className='label'>Address</label>
-							<input
-								type='text'
-								name='address'
-								id='address'
-								onChange={handleBusiness}
-								value={businessValue}
-							/>
-						</div>
-
-						<div>
-							<label className='label'>Neighbor</label>
-							<input
-								type='text'
-								name='neighbor'
-								id='neighbor'
-								onChange={handleBusiness}
-								value={businessValue}
-							/>
-						</div>
-
-						<div>
-							<label className='label'>Cuisine</label>
-							<input
-								type='text'
-								name='cuisine'
-								id='cuisine'
-								onChange={handleBusiness}
-								value={businessValue}
-							/>
-						</div>
+						<label className='label'>Phone number</label>
+						<input
+							value={phoneNumber}
+							onChange={(e) => setPhoneNumber(e.target.value)}
+							type='text'
+							name='address'
+							id='address'
+						/>
+						<label className='label'>First Name</label>
+						<input
+							value={firstName}
+							onChange={(e) => setFirstName(e.target.value)}
+							type='text'
+							name='cousine'
+							id='neighbor'
+						/>
+						<label className='label'>Last name</label>
+						<input
+							value={lastName}
+							type='text'
+							name='restaurant'
+							id='cuisine'
+							onChange={(e) => setLastName(e.target.value)}
+						/>
+						<button className='btn' type='submit' onClick={submitClient}>
+							Submit
+						</button>
 					</>
-					<button className='btn' type='submit' onClick={submitBusiness}>
-						Submit
-					</button>
-				</form>
-			) : null}
-			<button type='button' onClick={() => history.push("/ ")}>
-				Go home
-			</button>
+				)}
+			</form>
 		</div>
 	);
 }
