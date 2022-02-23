@@ -5,6 +5,7 @@ import Register from "./components/Register/Register";
 import { Route, Routes } from "react-router-dom";
 import Profile from "./components/Profile/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <div className="App">

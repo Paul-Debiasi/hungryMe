@@ -5,3 +5,23 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.modalMenuContainer {
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  font-size: 20px;
+  .cartIcon:hover {
+    color: red;
+    cursor: pointer;
+  }
+  .cartIcon {
+    cursor: pointer;
+    font-size: 40px;
+  }
+}
+.modalButton {
+  width: 120px;
+  height: 100px;
+}
