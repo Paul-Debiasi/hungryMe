@@ -18,7 +18,7 @@ export default function CardItem({ item, cb }) {
   let toggled = false;
 
   //for each favorite item of currentUser we set toggled = true, to set the color of heartIcon red
-  currentUser.favorites.forEach((favItem) => {
+  currentUser.favorites?.forEach((favItem) => {
     if (item.id === favItem.id) {
       toggled = true;
     }
