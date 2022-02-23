@@ -1,21 +1,15 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { HungryMeContext } from "../../Context";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Register() {
-	const {
-		menu,
-		setMenu,
-		clientUser,
-		setClientUser,
-		businessUser,
-		setBusinessUser,
-	} = useContext(HungryMeContext);
+	const { clientUser, setClientUser, businessUser, setBusinessUser } =
+		useContext(HungryMeContext);
 	const [business, setBusiness] = useState(false);
 	const [client, setClient] = useState(false);
-	const [user, setUser] = useState({});
+	const [businessValue, setBusinessValue] = useState();
 	const [val, setVal] = useState();
 	let history = useHistory();
 
@@ -31,10 +25,6 @@ export default function Register() {
 		});
 	};
 
-	const clear = (e) => {
-		e.target.value = "";
-		console.log("From clear", e.target);
-	};
 	const handleBusiness = (e) => {
 		setBusinessUser({
 			...businessUser,
@@ -42,7 +32,6 @@ export default function Register() {
 			business: true,
 			[e.target.name]: e.target.value,
 		});
-		console.log(businessUser);
 	};
 
 	const submitClient = async (e) => {
@@ -59,6 +48,7 @@ export default function Register() {
 		const data = businessUser;
 		const response = await axios.post("/business", data);
 		console.log(response);
+		setBusinessValue(() => "");
 	};
 	console.log(val);
 
@@ -141,6 +131,7 @@ export default function Register() {
 								name='username'
 								type='text'
 								id='name'
+								value={businessValue}
 							/>
 						</div>
 						<div>
@@ -150,6 +141,7 @@ export default function Register() {
 								className='input'
 								type='email'
 								name='email'
+								value={businessValue}
 							/>
 						</div>
 						<div>
@@ -159,6 +151,7 @@ export default function Register() {
 								className='input'
 								type='password'
 								name='password'
+								value={businessValue}
 							/>
 						</div>
 
@@ -169,6 +162,7 @@ export default function Register() {
 								name='address'
 								id='address'
 								onChange={handleBusiness}
+								value={businessValue}
 							/>
 						</div>
 
@@ -179,6 +173,7 @@ export default function Register() {
 								name='neighbor'
 								id='neighbor'
 								onChange={handleBusiness}
+								value={businessValue}
 							/>
 						</div>
 
@@ -189,6 +184,7 @@ export default function Register() {
 								name='cuisine'
 								id='cuisine'
 								onChange={handleBusiness}
+								value={businessValue}
 							/>
 						</div>
 					</>
@@ -197,7 +193,7 @@ export default function Register() {
 					</button>
 				</form>
 			) : null}
-			<button type='button' onClick={() => history.push("/")}>
+			<button type='button' onClick={() => history.push("/ ")}>
 				Go home
 			</button>
 		</div>
