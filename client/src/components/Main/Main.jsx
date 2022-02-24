@@ -27,10 +27,10 @@ export default function Main() {
   };
 
   return (
-    <div>
+    <div className="mainContainer">
       <h1>Restaurants</h1>
       <Header />
-      {/*  <CarouselHeader /> */}
+      <CarouselHeader />
       <div className="cardContainer">
         {filtered.map((item) => (
           <Card item={item} key={item.id} cb={() => addToFav(item)} />
