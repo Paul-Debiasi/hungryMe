@@ -29,31 +29,32 @@ const style = {
   p: 4,
 };
 export default function Header() {
-  const { menu, setMenu, currentUser, setFiltered } = useContext(HungryMeContext);
+  const { menu, setMenu, currentUser, setFiltered } =
+    useContext(HungryMeContext);
 
   useEffect(() => {
     const getData = async (name) => {
       const response = await axios.get("/restaurant");
       console.log(response);
       setMenu(response.data);
-      setFiltered(response.data)
+      setFiltered(response.data);
     };
     getData();
   }, []);
   console.log(menu);
-const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
   //Search filter
   const handleChange = (e) => {
-    setInputValue(e.target.value)
+    setInputValue(e.target.value);
     const currentMenu = [...menu];
-    if(inputValue.length !== 0){
-    const filteredMenu = currentMenu.filter((item) => {
-      return item.name.toLowerCase().includes(inputValue.toLowerCase());
-    });
-    setFiltered([...filteredMenu]);}
-    else{
-      setMenu([...menu])
+    if (inputValue.length !== 0) {
+      const filteredMenu = currentMenu.filter((item) => {
+        return item.name.toLowerCase().includes(inputValue.toLowerCase());
+      });
+      setFiltered([...filteredMenu]);
+    } else {
+      setMenu([...menu]);
     }
     //console.log("filtered menu", filteredMenu);
   };
@@ -100,11 +101,12 @@ const [inputValue, setInputValue] = useState("")
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
-                value ={inputValue}
-                onChange={(e)=> setInputValue(e.target.value)}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
               />
-              <Button variant="light" onClick={handleChange}>Search  
-</Button>
+              <Button variant="light" onClick={handleChange}>
+                Search
+              </Button>
             </Form>
 
             <Nav className={currentUser.username ? "invisible" : "visible"}>
@@ -129,6 +131,7 @@ const [inputValue, setInputValue] = useState("")
                 width={50}
                 height={50}
                 alt="profile"
+                style={{ cursor: "pointer" }}
               />
               <Nav.Link onClick={handleLogOut}>Log Out</Nav.Link>
             </Nav>

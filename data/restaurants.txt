@@ -1,20 +1,56 @@
 [
   {
     "id": 1,
-    "name": "Kuchi Mitte",
+    "name": "Umami",
     "neighborhood": "Manhattan",
     "imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2f/33/2d/healthy-bowl-frische.jpg",
     "address": "171 E Broadway, New York, NY 10002",
-    "cuisine_type": "Asian"
-   
-  },
+    "cuisine_type": "Asian",
+    "menu": [
+      { "id":1,
+        "meal":"Asian BBQ Chicken",
+        "price": "8 euros"      
+      },
+        {"id":2,
+        "meal":"Vietnamese Dumplings",
+        "price": "10 euros"      
+      },
+        {"id":3,
+        "meal":"Grilled Fish with rice",
+        "price": "11 euros"      
+      },
+        {"id":4,
+        "meal":"Japanese Prawn Tempura",
+        "price": "6 euros"      
+      }
+    ]
+   },
   {
     "id": 2,
-    "name": "Umami",
+    "name": "Roma",
     "neighborhood": "Brooklyn",
     "imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
     "address": "919 Fulton St, Brooklyn, NY 11238",
-    "cuisine_type": "Pizza"
+    "cuisine_type": "Italian",
+    "menu": [
+      {"id":1,
+        "meal":"Margherita Pizza",
+        "price": "8 euros"      
+      },
+        {"id":2,
+        "meal":"Mushroom Risotto",
+        "price": "10 euros"      
+      },
+        {"id":3,
+        "meal":"Pasta Con Pomodoro E Basilico",
+        "price": "11 euros"      
+      },
+        {"id":4,
+        "meal":"Panzenella",
+        "price": "6 euros"      
+      }
+    ]
+
   },
   {
     "id": 3,
@@ -22,7 +58,25 @@
     "neighborhood": "Manhattan",
     "imageURL": "https://pervenchecatering.co.uk/wp-content/uploads/2020/08/sushi-japanese-food-catering-pervenche-asian-fusion-food-catering-london-1.jpg",
     "address": "1 E 32nd St, New York, NY 10016",
-    "cuisine_type": "Asian"
+    "cuisine_type": "French",
+    "menu": [
+      {"id":1,
+        "meal":"Chicken confit",
+        "price": "8 euros"      
+      },
+        {"id":2,
+        "meal":"French onion soup",
+        "price": "10 euros"      
+      },
+        {"id":3,
+        "meal":"Salmon en papillote",
+        "price": "11 euros"      
+      },
+        {"id":4,
+        "meal":"Boeuf bourguignon",
+        "price": "6 euros"      
+      }
+    ]
   },
   {
     "id": 4,
@@ -30,7 +84,25 @@
     "neighborhood": "Manhattan",
     "imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
     "address": "205 E Houston St, New York, NY 10002",
-    "cuisine_type": "American"
+    "cuisine_type": "American",
+    "menu": [
+      {"id":1,
+        "meal":"Apple Pie",
+        "price": "8 euros"      
+      },
+        {"id":2,
+        "meal":"The Hamburger",
+        "price": "10 euros"      
+      },
+        {"id":3,
+        "meal":"Texas Barbecue",
+        "price": "11 euros"      
+      },
+        {"id":4,
+        "meal":"Clam Chowder",
+        "price": "6 euros"      
+      }
+    ]
   },
   {
     "id": 5,
@@ -81,4 +153,5 @@
     "address": "5-48 49th Ave, Queens, NY 11101",
     "cuisine_type": "Mexican"
   }
+
 ]

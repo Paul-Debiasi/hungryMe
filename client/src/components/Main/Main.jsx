@@ -3,16 +3,10 @@ import { HungryMeContext } from "../../Context";
 import Card from "../Card/Card";
 import Header from "../Header/Header";
 import axios from "axios";
+import CarouselHeader from "../Header/Carousel";
 
 export default function Main() {
-  const {
-    menu,
-    favorites,
-    setFavorites,
-    setCurrentUser,
-    currentUser,
-    filtered,
-  } = useContext(HungryMeContext);
+  const { setCurrentUser, currentUser, filtered } = useContext(HungryMeContext);
 
   const addToFav = async (item) => {
     //adding a new restaurant to favorite array
@@ -31,13 +25,15 @@ export default function Main() {
     //updating currentUser from backend
     setCurrentUser(response.data.client);
   };
+
   return (
-    <div>
+    <div className="mainContainer">
       <h1>Restaurants</h1>
       <Header />
+      <CarouselHeader />
       <div className="cardContainer">
-        {filtered.map((item, idx) => (
-          <Card item={item} key={idx} cb={() => addToFav(item)} />
+        {filtered.map((item) => (
+          <Card item={item} key={item.id} cb={() => addToFav(item)} />
         ))}
       </div>
     </div>

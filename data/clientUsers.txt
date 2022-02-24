@@ -4,35 +4,11 @@
 		"username": "pasta",
 		"name": "Carbonara",
 		"businessUser": true,
-		"email": "simona@gmail.com",
+		"email": "carbonara@gmail.com",
 		"password": "1234",
 		"city": "Paris",
 		"avatar": "https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-brunette-woman-short-hair-avatar-cartoon-character-vector-149728784.jpg",
 		"favorites": [
-			{
-				"id": 9,
-				"name": "Mu Ramen",
-				"neighborhood": "Queens",
-				"imageURL": "https://assets.bonappetit.com/photos/57ae038653e63daf11a4e122/master/pass/shoyu-ramen.jpg",
-				"address": "1209 Jackson Ave, Queens, NY 11101",
-				"cuisine_type": "Asian"
-			},
-			{
-				"id": 6,
-				"name": "Hometown BBQ",
-				"neighborhood": "Brooklyn",
-				"imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4GUCKb0OX5oUYKUHmGQ5LoMUN4n-0VgLhedTmYRRXFmM7-R1NwG5uvUc-Mi8JU3NSU4&usqp=CAU",
-				"address": "454 Van Brunt St, Brooklyn, NY 11231",
-				"cuisine_type": "American"
-			},
-			{
-				"id": 4,
-				"name": "Uncle Ben",
-				"neighborhood": "Manhattan",
-				"imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
-				"address": "205 E Houston St, New York, NY 10002",
-				"cuisine_type": "American"
-			},
 			{
 				"id": 3,
 				"name": "Kang Ho Dong Baekjeong",
@@ -43,257 +19,142 @@
 			},
 			{
 				"id": 2,
-				"name": "Umami",
+				"name": "Roma",
 				"neighborhood": "Brooklyn",
 				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
 				"address": "919 Fulton St, Brooklyn, NY 11238",
-				"cuisine_type": "Pizza"
-			}
-		]
-	},
-	{
-		"id": "a10762a0-53ef-4b68-be63-95e2872764e2",
-		"client": true,
-		"favorites": [],
-		"username": "pastafffffff",
-		"password": "1234142457452433333",
-		"email": "udtrdrxch"
-	},
-	{
-		"id": "a10762a0-53ef-4b68-be63-95e2872764e2",
-		"client": true,
-		"favorites": [],
-		"username": "pastafffffff",
-		"password": "1234142457452433333",
-		"email": "udtrdrxch"
-	},
-	{
-		"id": "2f053175-6d35-4916-bc89-25753f5b29d7",
-		"client": true,
-		"favorites": [],
-		"username": "pastabserx",
-		"password": "1234",
-		"email": "nchg"
-	},
-	{
-		"id": "13947428-c478-4f42-bdc8-4c60bf8a5355",
-		"client": true,
-		"favorites": [],
-		"username": "1111pasta",
-		"password": "1234",
-		"email": "hfgx"
-	},
-	{
-		"id": "00365046-4cce-4fc3-885e-ab1fbb5863b8",
-		"client": true,
-		"favorites": [],
-		"username": "pasta111",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "643a15d1-ec7a-41db-9393-eadbbc8d7306",
-		"client": true,
-		"favorites": [],
-		"username": "pastavdsgg",
-		"password": "1234",
-		"email": "gsfxy"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "da84f4c1-a557-4973-9312-d1c49ae3a842",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "cddbf9ce-adc5-4744-a1a8-a6e2055c7fab",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "cddbf9ce-adc5-4744-a1a8-a6e2055c7fab",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "cddbf9ce-adc5-4744-a1a8-a6e2055c7fab",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "cddbf9ce-adc5-4744-a1a8-a6e2055c7fab",
-		"client": true,
-		"favorites": [],
-		"username": "pasta",
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "d553722d-7268-4b1d-981b-cd7ffab8010d",
-		"client": true,
-		"favorites": [],
-		"username": "helooooooooooooooooooooooooo",
-		"password": "1234htr7jnw",
-		"email": "gdfsx@gmail.com"
-	},
-	{
-		"id": "dbd2df67-d7e4-47b1-b563-69c84030d021",
-		"client": true,
-		"favorites": [],
-		"username": "pastagaga",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "dbd2df67-d7e4-47b1-b563-69c84030d021",
-		"client": true,
-		"favorites": [],
-		"username": "pastagaga",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "c281813a-bc4c-4018-b5c4-9a29e4ea9a20",
-		"favorites": [],
-		"username": "0000p0astagaga",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
-		"client": true,
-		"favorites": [],
-		"username": "pasta00000000000000",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
-		"client": true,
-		"favorites": [],
-		"username": "pasta00000000000000",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "6f13f8c3-06b5-461c-87b2-58406cb590a3",
-		"client": true,
-		"favorites": [],
-		"username": "pasta00000000000000",
-		"businessUser": false,
-		"password": "1234",
-		"email": "semuona@gmail.com"
-	},
-	{
-		"id": "b912e7f6-afea-4b50-b13f-bcc24920fa04",
-		"client": true,
-		"favorites": [],
-		"username": "pasta000",
-		"businessUser": false,
-		"password": "1234",
-		"email": "keston.antonio.schmidtgen@gmail.com"
-	},
-	{
-		"id": "b9892af3-7539-461e-b2c5-a54b80374f77",
-		"client": true,
-		"favorites": [],
-		"username": "burger",
-		"businessUser": false,
-		"password": "1234",
-		"email": "sim@some.gmail"
-	},
-	{
-		"id": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1",
-		"favorites": [
+				"cuisine_type": "Italian",
+				"menu": [
+					{
+						"id": 1,
+						"meal": "Margherita Pizza",
+						"price": "8 euros"
+					},
+					{
+						"id": 2,
+						"meal": "Mushroom Risotto",
+						"price": "10 euros"
+					},
+					{
+						"id": 3,
+						"meal": "Pasta Con Pomodoro E Basilico",
+						"price": "11 euros"
+					},
+					{
+						"id": 4,
+						"meal": "Panzenella",
+						"price": "6 euros"
+					}
+				]
+			},
 			{
 				"id": 1,
-				"name": "Kuchi Mitte",
+				"name": "Umami",
 				"neighborhood": "Manhattan",
 				"imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2f/33/2d/healthy-bowl-frische.jpg",
 				"address": "171 E Broadway, New York, NY 10002",
 				"cuisine_type": "Asian",
-				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
-			},
+				"menu": [
+					{
+						"id": 1,
+						"meal": "Asian BBQ Chicken",
+						"price": "8 euros"
+					},
+					{
+						"id": 2,
+						"meal": "Vietnamese Dumplings",
+						"price": "10 euros"
+					},
+					{
+						"id": 3,
+						"meal": "Grilled Fish with rice",
+						"price": "11 euros"
+					},
+					{
+						"id": 4,
+						"meal": "Japanese Prawn Tempura",
+						"price": "6 euros"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "f3426690-1838-4875-8566-397633b4b11b",
+		"favorites": [
+			{
+				"id": 1,
+				"name": "Umami",
+				"neighborhood": "Manhattan",
+				"imageURL": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2f/33/2d/healthy-bowl-frische.jpg",
+				"address": "171 E Broadway, New York, NY 10002",
+				"cuisine_type": "Asian",
+				"menu": [
+					{
+						"id": 1,
+						"meal": "Asian BBQ Chicken",
+						"price": "8 euros"
+					},
+					{
+						"id": 2,
+						"meal": "Vietnamese Dumplings",
+						"price": "10 euros"
+					},
+					{
+						"id": 3,
+						"meal": "Grilled Fish with rice",
+						"price": "11 euros"
+					},
+					{
+						"id": 4,
+						"meal": "Japanese Prawn Tempura",
+						"price": "6 euros"
+					}
+				]
+			}
+		],
+		"client": true,
+		"username": "burger",
+		"businessUser": true,
+		"phoneNumber": "+489234482",
+		"firstName": "Harry",
+		"lastName": "Potter",
+		"password": "1234",
+		"email": "burger@gmail.com",
+		"avatar": "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
+	},
+	{
+		"id": "68b2a826-9439-4d75-b4a2-9b25081c0a3d",
+		"favorites": [
 			{
 				"id": 2,
-				"name": "Umami",
+				"name": "Roma",
 				"neighborhood": "Brooklyn",
 				"imageURL": "https://media.istockphoto.com/photos/chinese-food-blank-background-picture-id545286388?k=20&m=545286388&s=612x612&w=0&h=1zAWEuV5W6SoYtErOkWasELFcAWMKgQEBUsNOoH5znc=",
 				"address": "919 Fulton St, Brooklyn, NY 11238",
-				"cuisine_type": "Pizza",
-				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
+				"cuisine_type": "Italian",
+				"menu": [
+					{
+						"id": 1,
+						"meal": "Margherita Pizza",
+						"price": "8 euros"
+					},
+					{
+						"id": 2,
+						"meal": "Mushroom Risotto",
+						"price": "10 euros"
+					},
+					{
+						"id": 3,
+						"meal": "Pasta Con Pomodoro E Basilico",
+						"price": "11 euros"
+					},
+					{
+						"id": 4,
+						"meal": "Panzenella",
+						"price": "6 euros"
+					}
+				]
 			},
 			{
 				"id": 4,
@@ -302,39 +163,38 @@
 				"imageURL": "https://media.istockphoto.com/photos/hamburger-table-scene-top-view-over-dark-wood-picture-id1252796974?b=1&k=20&m=1252796974&s=170667a&w=0&h=bv0YG2MlmdhPcv4Ql8ENmcUNVkiavOjuY7RYJsPZcmo=",
 				"address": "205 E Houston St, New York, NY 10002",
 				"cuisine_type": "American",
-				"currentUser": "518ef8a7-9597-4ae9-b8d2-d7ca7bca53a1"
+				"menu": [
+					{
+						"id": 1,
+						"meal": "Apple Pie",
+						"price": "8 euros"
+					},
+					{
+						"id": 2,
+						"meal": "The Hamburger",
+						"price": "10 euros"
+					},
+					{
+						"id": 3,
+						"meal": "Texas Barbecue",
+						"price": "11 euros"
+					},
+					{
+						"id": 4,
+						"meal": "Clam Chowder",
+						"price": "6 euros"
+					}
+				]
 			}
 		],
 		"client": true,
-		"username": "Alessia999",
-		"businessUser": true,
-		"address": "",
-		"companyName": "",
-		"cousineType": "",
-		"password": "123",
-		"email": "keston.antonio.schmidtgen@gmail.com"
-	},
-	{
-		"id": "31e3ad35-2bde-4812-a44a-437aebc7a8d9",
-		"favorites": [],
-		"client": true,
-		"username": "Alessia999",
+		"username": "pizza",
 		"businessUser": false,
-		"address": "",
-		"companyName": "",
-		"cousineType": "",
-		"password": "123"
-	},
-	{
-		"id": "5fa61948-0354-4ede-9c20-b2f25ee049de",
-		"favorites": [],
-		"client": true,
-		"username": "boss",
-		"businessUser": true,
-		"phoneNumber": "",
-		"firstName": "",
-		"lastName": "",
+		"phoneNumber": "+4911111111222",
+		"firstName": "Anna",
+		"lastName": "Scott",
 		"password": "1234",
-		"email": "boss@gmail.com"
+		"email": "anna@gmail.com",
+		"avatar": "https://thumbs.dreamstime.com/b/female-user-profile-avatar-woman-character-screen-saver-emotions-website-mobile-app-design-vector-199001739.jpg"
 	}
 ]
