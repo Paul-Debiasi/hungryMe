@@ -3,8 +3,20 @@ import { createContext, useState } from "react";
 export const HungryMeContext = createContext();
 
 export default function HungryMeContextProvider({ children }) {
-	const [businessUser, setBusinessUser] = useState({});
-	const [clientUser, setClientUser] = useState({});
+	const [businessUser, setBusinessUser] = useState({
+		username: "",
+		email: "",
+		password: "",
+		phoneNumber: "",
+		firstName: "",
+		lastName: "",
+	});
+	const [business, setBusiness] = useState(false);
+	const [clientUser, setClientUser] = useState({
+		username: "",
+		email: "",
+		password: "",
+	});
 	const [menu, setMenu] = useState([]);
 	const [cart, setCart] = useState([]);
 	const [businessUserArray, setBusinessUserArray] = useState([]);

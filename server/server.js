@@ -32,7 +32,7 @@ const loadClients = () => {
 	//parse() takes a JSON string and then transforms it into a JavaScript object
 	const newDataFile = JSON.parse(dataFile);
 
-	clients = [...newDataClient];
+	clients = [...newDataFile];
 };
 
 //writes stringified data to clientUsers.txt
@@ -61,18 +61,18 @@ const saveRestaurants = () => {
 	);
 };
 
-app.post("/business", (req, res) => {
-	try {
-		if (!req.body.business) return res.send({ success: false, errorId: 1 }); // username is empty
-		loadBusiness();
-		business.push(req.body); // add the new user to the array
-		saveBusiness();
-		res.send({ success: true, client: req.body }); // send back to client the result
-	} catch (error) {
-		console.log("error in app.post", error.message);
-		res.send(error.message);
-	}
-});
+// app.post("/business", (req, res) => {
+// 	try {
+// 		if (!req.body.business) return res.send({ success: false, errorId: 1 }); // username is empty
+// 		loadBusiness();
+// 		business.push(req.body); // add the new user to the array
+// 		saveBusiness();
+// 		res.send({ success: true, client: req.body }); // send back to client the result
+// 	} catch (error) {
+// 		console.log("error in app.post", error.message);
+// 		res.send(error.message);
+// 	}
+// });
 
 app.get("/restaurant", (req, res) => {
 	try {
@@ -145,6 +145,19 @@ app.get("/profile", (req, res) => {
 		res.send(clients);
 	} catch (e) {
 		console.log(e.message);
+	}
+});
+app.post("/register", (req, res) => {
+	console.log();
+	try {
+		if (!req.body) return res.send({ success: false, errorId: 1 }); // username is empty
+		loadClients();
+		clients.push(req.body); // add the new user to the array
+		saveClients();
+		res.send({ success: true, user: req.body }); // send back to client the result
+	} catch (error) {
+		console.log("error in app.post", error.message);
+		res.send(error.message);
 	}
 });
 
