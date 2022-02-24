@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import unknown from "../../img/unknown.png";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const { currentUser } = useContext(HungryMeContext);
@@ -44,7 +45,12 @@ export default function Profile() {
             />
           </div>
         ))
-      )}
+      
+    )}
+{currentUser.businessUser ? (
+      
+      <Link to="/businessuser" className="btn btn-primary">Add New Restaurant</Link>) : null }
+
     </div>
   );
 }

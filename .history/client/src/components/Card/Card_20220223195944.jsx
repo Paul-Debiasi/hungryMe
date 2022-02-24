@@ -14,11 +14,15 @@ import { HungryMeContext } from "../../Context";
 import { useContext } from "react";
 
 export default function CardItem({ item, cb }) {
-  const { currentUser } = useContext(HungryMeContext);
+  const { currentUser, imageURL, setImage } = useContext(HungryMeContext);
   let toggled = false;
 
+console.log("URL here", imageURL)
+if(imageURL !== null)
+
+
   //for each favorite item of currentUser we set toggled = true, to set the color of heartIcon red
-  currentUser.favorites.forEach((favItem) => {
+  currentUser.favorites?.forEach((favItem) => {
     if (item.id === favItem.id) {
       toggled = true;
     }

@@ -1,0 +1,122 @@
+import { useState, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { HungryMeContext } from "../../Context";
+import axios from "axios";
+import "./business.scss";
+import { useNavigate } from "react-router-dom";
+import { CLoadingButton } from '@coreui/react-pro'
+
+export default function BusinessUser() {
+    const navigate = useNavigate()
+
+  const { menu, setMenu, imageURL, setImage } =
+    useContext(HungryMeContext);
+  const [name, setName] = useState("");
+  const [neigborhood, setNeigborhood] = useState("");
+  const [address, setAddress] = useState("");
+  const [cuisine, setCuisine] = useState("");
+  const [id, setId] = useState(uuidv4());
+
+ 
+
+
+  const submitMenu = async (e) => {
+    e.preventDefault();
+
+    setMenu({
+        ...menu,
+        id: uuidv4(),
+        name: name,
+        neigborhood: neigborhood,
+        address: address,
+        cuisine_type: cuisine,
+        imageURL : imageURL
+      });
+      
+    const data = {id,name, neigborhood,address,cuisine, imageURL };
+    
+    const response = await axios.post("/addMenu", data);
+    console.log("response from menu", response);
+    navigate("/")
+
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.button'),
+        loader = document.querySelector('.loader'),
+        check = document.querySelector('.check');
+    
+    btn.addEventListener('click', function () {
+      loader.classList.add('active');    
+    });
+   
+    loader.addEventListener('animationend', function() {
+      check.classList.add('active'); 
+    });
+  });
+  
+  return (
+    <div className="RestaurantForm">
+      <div>
+        <h1>Add New Restaurant</h1>
+      </div>
+      
+      <form>
+        <input
+        value={name}
+          onChange={(e)=>setName(e.target.value)}
+          className="input"
+          name="name"
+          type="text"
+          id="name"
+          placeholder="Restaurant Name"
+        />
+        <input
+        value={neigborhood}
+          onChange={(e)=>setNeigborhood(e.target.value)}
+          className="input"
+          name="Neighborhood"
+          type="text"
+          id="neighborhood"
+          placeholder="Neigborhood"
+        />
+        <input
+        value={address}
+          onChange={(e)=>setAddress(e.target.value)}
+          className="input"
+          type="address"
+          name="address"
+          placeholder="Address"
+
+        />
+        <input
+        value={cuisine}
+          onChange={(e)=>setCuisine(e.target.value)}
+          className="input"
+          type="cuisine"
+          name="cuisine"
+        placeholder="Cuisine Type"
+         
+        />
+        <input
+         onChange={(e)=>{setImage(URL.createObjectURL(e.target.files[0]))}}
+        className="input"
+          type="file"
+          name="image"
+         
+        />
+        <div class="main">
+  <button class="button">Send</button>
+  
+  
+  <div class="loader">
+    <div class="check">
+      <span class="check-one"></span>
+      <span class="check-two"></span>
+    </div>
+  </div>
+  
+</div>
+      </form>
+    </div>
+  );
+}

@@ -336,5 +336,53 @@
 		"lastName": "",
 		"password": "1234",
 		"email": "boss@gmail.com"
+	},
+	{
+		"id": "7a39c4f2-f93e-4663-aea9-6fce4438b264",
+		"favorites": [],
+		"client": true,
+		"username": "esra",
+		"businessUser": true,
+		"phoneNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"email": "abcd@gmail.com",
+		"password": "1234"
+	},
+	{
+		"id": "888e968f-1c36-4128-8661-f1f43e1e7dd8",
+		"favorites": [],
+		"client": true,
+		"username": "asd",
+		"businessUser": false,
+		"phoneNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"email": "as",
+		"password": "asd"
+	},
+	{
+		"id": "888e968f-1c36-4128-8661-f1f43e1e7dd8",
+		"favorites": [],
+		"client": true,
+		"username": "asd",
+		"businessUser": false,
+		"phoneNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"email": "as",
+		"password": "asd"
+	},
+	{
+		"id": "888e968f-1c36-4128-8661-f1f43e1e7dd8",
+		"favorites": [],
+		"client": true,
+		"username": "asd",
+		"businessUser": false,
+		"phoneNumber": "",
+		"firstName": "",
+		"lastName": "",
+		"email": "as",
+		"password": "asd"
 	}
 ]

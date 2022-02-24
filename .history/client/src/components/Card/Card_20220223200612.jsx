@@ -14,8 +14,15 @@ import { HungryMeContext } from "../../Context";
 import { useContext } from "react";
 
 export default function CardItem({ item, cb }) {
-  const { currentUser } = useContext(HungryMeContext);
+  const { currentUser, imageURL, setImage } = useContext(HungryMeContext);
   let toggled = false;
+
+
+if(imageURL !== null){
+  console.log("URL here", imageURL?.name)
+
+}
+
 
   //for each favorite item of currentUser we set toggled = true, to set the color of heartIcon red
   currentUser.favorites?.forEach((favItem) => {
@@ -39,7 +46,7 @@ export default function CardItem({ item, cb }) {
       <CardMedia
         component="img"
         height="194"
-        image={item.imageURL}
+        image={item.imageURL.name}
         alt="Paella dish"
       />
       <CardContent>
