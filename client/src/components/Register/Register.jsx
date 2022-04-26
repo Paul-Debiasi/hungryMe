@@ -1,17 +1,24 @@
 import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { HungryMeContext } from "../../Context";
 import axios from "axios";
 import "./Register.scss";
-
 export default function Register() {
-  const { menu, setMenu, clientUser, setClientUser } =
-    useContext(HungryMeContext);
+  const {
+    businessUser,
+    setBusinessUser,
+    clientUser,
+    setClientUser,
+    setCurrentUser,
+    currentUser,
+  } = useContext(HungryMeContext);
   const [business, setBusiness] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
+  let history = useNavigate();
+  const saveUserToLocal = (user) => {
+    const stringUser = JSON.stringify(user);
+    localStorage.setItem("authorizedUser", stringUser);
+  };
   const handleClient = (e) => {
     e.preventDefault();
     console.log("response is");
@@ -20,108 +27,178 @@ export default function Register() {
       id: uuidv4(),
       favorites: [],
       client: true,
-      [e.target.name]: e.target.value,
       businessUser: business,
-      phoneNumber: phoneNumber,
-      firstName: firstName,
-      lastName: lastName,
+      [e.target.name]: e.target.value,
     });
   };
-
+  const handleBusiness = (e) => {
+    e.preventDefault();
+    console.log("response is");
+    setBusinessUser({
+      ...businessUser,
+      id: uuidv4(),
+      favorites: [],
+      client: true,
+      businessUser: business,
+      [e.target.name]: e.target.value,
+    });
+  };
   const submitClient = async (e) => {
     e.preventDefault();
-
     const data = clientUser;
     console.log("Submitting !!", data);
     const response = await axios.post("/register", data);
     console.log("response is", response);
+    setCurrentUser(response?.data.user);
+    saveUserToLocal(response?.data.user);
+    history("/profile");
   };
-
-  console.log(clientUser);
-
+  const submitBusiness = async (e) => {
+    e.preventDefault();
+    const data = businessUser;
+    console.log("Submitting !!", data);
+    const response = await axios.post("/register", data);
+    console.log("response is", response);
+    setCurrentUser(response?.data.user);
+    saveUserToLocal(response?.data.user);
+    history("/profile");
+  };
   return (
     <div className="registerForm">
       <div>
         <h1>User Registration</h1>
       </div>
-      <input
-        type="radio"
-        value="client"
-        name="gender"
-        defaultChecked
-        onChange={() => {
-          setBusiness(false);
-        }}
-      />{" "}
-      Client
-      <input
-        type="radio"
-        value="business"
-        name="gender"
-        onChange={() => {
-          setBusiness(true);
-        }}
-      />{" "}
-      Business owner
-      <form>
-        <label className="label">Name</label>
-        <input
-          onChange={handleClient}
-          className="input"
-          name="username"
-          type="text"
-          id="name"
-        />
-        <label className="label">Email</label>
-        <input
-          onChange={handleClient}
-          className="input"
-          type="email"
-          name="email"
-        />
-        <label className="label">Password</label>
-        <input
-          onChange={handleClient}
-          className="input"
-          type="password"
-          name="password"
-        />
-        {!business ? (
+      <div className="radioContainer">
+        <div>
+          <label htmlFor="">Client</label>
+          <input
+            type="radio"
+            value="client"
+            name="gender"
+            defaultChecked
+            onChange={() => {
+              setBusiness(false);
+            }}
+          />
+        </div>
+        <div className="owner">
+          <label htmlFor="">Business owner</label>
+          <input
+            type="radio"
+            value="business"
+            name="gender"
+            onChange={() => {
+              setBusiness(true);
+            }}
+          />
+        </div>
+      </div>
+      {!business ? (
+        <form className="clientForm">
+          <div>
+            <label className="label">Name</label>
+            <input
+              onChange={handleClient}
+              className="input"
+              name="username"
+              type="text"
+              id="name"
+            />
+          </div>
+          <div>
+            <label className="label">Email</label>
+            <input
+              onChange={handleClient}
+              className="input"
+              type="email"
+              name="email"
+            />
+          </div>
+          <div>
+            <label className="label">Password</label>
+            <input
+              onChange={handleClient}
+              className="input"
+              type="password"
+              name="password"
+            />
+          </div>
           <button className="btn" type="submit" onClick={submitClient}>
             Submit
           </button>
-        ) : (
-          <>
-            <label className="label">Phone number</label>
-            <input
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              type="text"
-              name="address"
-              id="address"
-            />
-            <label className="label">First Name</label>
-            <input
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              type="text"
-              name="cousine"
-              id="neighbor"
-            />
-            <label className="label">Last name</label>
-            <input
-              value={lastName}
-              type="text"
-              name="restaurant"
-              id="cuisine"
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <button className="btn" type="submit" onClick={submitClient}>
+        </form>
+      ) : (
+        <>
+          <form className="businessForm">
+            <div>
+              <label className="label">First Name</label>
+              <input
+                onChange={handleBusiness}
+                type="text"
+                name="firstName"
+                id="neighbor"
+              />
+            </div>
+            <div>
+              <label className="label">Last name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="cuisine"
+                onChange={handleBusiness}
+              />
+            </div>
+            <div>
+              <label className="label">User Name</label>
+              <input
+                onChange={handleBusiness}
+                type="text"
+                name="username"
+                id="neighbor"
+              />
+            </div>
+            <div>
+              <label className="label">Email</label>
+              <input
+                onChange={handleBusiness}
+                className="input"
+                type="email"
+                name="email"
+              />
+            </div>
+            <div>
+              <label className="label">City</label>
+              <input
+                onChange={handleBusiness}
+                type="text"
+                name="city"
+                id="address"
+              />
+            </div>
+            <div>
+              <label className="label">Phone number</label>
+              <input
+                onChange={handleBusiness}
+                type="text"
+                name="phoneNumber"
+                id="address"
+              />
+            </div>
+            <div>
+              <label className="label">Password</label>
+              <input
+                onChange={handleBusiness}
+                className="input"
+                type="password"
+                name="password"
+              />
+            </div>
+            <button className="btn" type="submit" onClick={submitBusiness}>
               Submit
             </button>
-          </>
-        )}
-      </form>
+          </form>
+        </>
+      )}
     </div>
   );
 }
